@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { COLORS } from "../../utils/constants";
 import { scale } from "react-native-size-matters";
-import Loader from "./Loader";
+import Loader from "../common/Loader";
 
 const Splash = () => {
   return (

@@ -24,14 +24,11 @@ const Loader = ({ style, width = 100, height = 100 }) => {
 
   return (
     <View style={[styles.container, style, { width, height }]}>
-      <Animated.View
+      <Animated.Image
+      source={require('../../../assets/loader.png')}
         style={{
           width,
           height: width, // Maintain a square shape
-          borderBottomColor: COLORS._secondary_color,
-          borderColor: COLORS._primary_color,
-          borderWidth: 4,
-          borderRadius: width / 2, // Ensures it's circular
           transform: [{ rotate: spin }], // Apply spinning animation
         }}
       />
