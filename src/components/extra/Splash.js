@@ -3,6 +3,7 @@ import React from "react";
 import { COLORS } from "../../utils/constants";
 import { scale } from "react-native-size-matters";
 import Loader from "../common/Loader";
+import {} from "react-native-responsive-dimensions"
 
 const Splash = () => {
   return (

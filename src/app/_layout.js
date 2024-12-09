@@ -16,8 +16,8 @@ export default function Page() {
     );
 
   return (
-    <SafeArea backgroundColor={COLORS._secondary_color}>
       <OnBoardingScreen />
-    </SafeArea>
+    // <SafeArea backgroundColor={COLORS._primary_color}>
+    // </SafeArea>
   );
 }
