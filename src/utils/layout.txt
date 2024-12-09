@@ -1,0 +1,68 @@
+src/
+├── api/
+│   ├── auth/
+│   │   ├── authService.js         # API calls related to authentication
+│   │   └── authUtils.js           # Utility functions (e.g., token management)
+│   ├── user/
+│   │   ├── userService.js         # API calls related to user profiles
+│   │   └── userUtils.js           # Utility functions for user-specific tasks
+│   ├── index.js                   # Centralized export of all API services
+├── components/
+│   ├── common/
+│   │   ├── Button.js              # Reusable button component
+│   │   ├── Input.js               # Reusable input component
+│   │   └── Loader.js              # Loading spinner
+│   ├── auth/
+│   │   ├── LoginForm.js           # Login form component
+│   │   ├── SignUpForm.js          # Signup form component
+│   │   └── ForgotPasswordForm.js  # Forgot password form
+├── config/
+│   ├── apiConfig.js               # Base URL and global API settings
+│   └── env.js                     # Environment variables (e.g., API keys)
+├── hooks/
+│   ├── useAuth.js                 # Custom hook for authentication state
+│   ├── useFetch.js                # Generic hook for data fetching
+│   └── useUser.js                 # Hook for user-related data management
+├── screens/
+│   ├── auth/
+│   │   ├── Login.js               # Login screen
+│   │   ├── SignUp.js              # Signup screen
+│   │   └── ForgotPassword.js      # Forgot password screen
+│   ├── home/
+│   │   ├── Home.js                # Home screen
+│   │   ├── ForYou.js              # "For You" tab
+│   │   ├── Explore.js             # Explore tab
+│   │   └── Profile.js             # Profile details screen
+│   ├── chat/
+│   │   ├── ChatList.js            # Chat list screen
+│   │   └── ChatRoom.js            # Individual chat room
+│   ├── settings/
+│   │   ├── AccountSettings.js     # Account settings screen
+│   │   ├── Billing.js             # Billing and subscriptions
+│   │   └── Notifications.js       # Notification settings
+├── services/
+│   ├── auth/
+│   │   └── AuthService.js         # Business logic for authentication
+│   ├── user/
+│   │   └── UserService.js         # Business logic for user management
+├── state/
+│   ├── AuthContext.js             # Context for authentication state
+│   ├── UserContext.js             # Context for user data
+│   └── index.js                   # Centralized export for contexts
+├── utils/
+│   ├── validators.js              # Input validation logic
+│   ├── constants.js               # Constants (e.g., route names, static texts)
+│   └── helpers.js                 # General utility functions
+├── App.js                         # Main entry point of the app
+└── app/
+    ├── (auth)/                    # Nested routes for authentication
+    │   ├── login.js               # Login route
+    │   ├── signup.js              # Signup route
+    │   └── forgot-password.js     # Forgot password route
+    ├── (tabs)/                    # Main tab navigation
+    │   ├── home.js                # Home tab
+    │   ├── explore.js             # Explore tab
+    │   ├── chats.js               # Chats tab
+    │   ├── my-creation.js         # My creation tab
+    │   └── account.js             # Account tab
+    └── _layout.js                 # Tab navigation layout
