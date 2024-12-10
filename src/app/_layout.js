@@ -1,11 +1,10 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Splash from "../components/extra/Splash";
 import useFonts from "../hooks/useFonts";
 import SafeArea from "../components/common/SafeArea";
 import { COLORS } from "../utils/constants";
-import OnBoardingScreen from "../screens/onboarding/OnBoardingScreen";
+import { Stack } from "expo-router";
 
-export default function Page() {
+export default function Layout() {
   const appReady = useFonts(); //custom hook takes splash screen
 
   if (!appReady)
@@ -14,10 +13,10 @@ export default function Page() {
         <Splash />
       </SafeArea>
     );
-
   return (
-      <OnBoardingScreen />
-    // <SafeArea backgroundColor={COLORS._primary_color}>
-    // </SafeArea>
+    <Stack>
+      <Stack.Screen name="index" options={{headerShown:false}}/>
+      <Stack.Screen name="(auth)/login" options={{headerShown:false}}/>
+    </Stack>
   );
 }

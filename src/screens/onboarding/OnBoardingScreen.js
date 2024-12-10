@@ -1,18 +1,29 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React, { useState } from "react";
-import { scale } from "react-native-size-matters";
 import { COLORS, ONBOARDING_DATA } from "../../utils/constants";
 import Button from "../../components/common/Button";
-import { responsiveFontSize } from "react-native-responsive-dimensions";
+import { fsp, hp, wp } from "../../utils/helper";
+import Animated, { FadeInLeft, FadeOutRight } from "react-native-reanimated";
+import { useRouter } from "expo-router";
 
 const OnBoardingScreen = () => {
   //States
   const [_currentPage, _setCurrentPage] = useState(0);
+  const router = useRouter();
 
   //Methods
-  const handleSkip = () => {};
+  const handleSkip = () => {
+    _setCurrentPage(ONBOARDING_DATA.length - 1);
+  };
 
-  const handleContinue = () => _setCurrentPage((prev) => prev + 1);
+  const handleContinue = () => {
+    if (_currentPage < ONBOARDING_DATA.length - 1) {
+      _setCurrentPage((prev) => prev + 1);
+    }
+    else{
+      router.push('(auth)/login')
+    }
+  };
 
   return (
     <View
@@ -20,39 +31,44 @@ const OnBoardingScreen = () => {
         flex: 1,
         justifyContent: "flex-start",
         alignItems: "center",
-        gap: scale(20),
+        gap: hp(2),
+        width: wp(100),
       }}
     >
       <View
         style={{
           width: "200%",
-          flex: 0.55,
+          flex: 0.5,
           overflow: "hidden",
           backgroundColor: COLORS._primary_color,
-          paddingLeft: scale(20),
-          paddingRight: scale(20),
+          paddingLeft: wp(5),
+          paddingRight: wp(5),
+          paddingTop: hp(10),
           justifyContent: "flex-start",
           alignItems: "center",
-          borderBottomLeftRadius: 450,
-          borderBottomRightRadius: 450,
+          borderBottomLeftRadius: wp(100),
+          borderBottomRightRadius: wp(100),
         }}
       >
-        <Image
+        <Animated.Image
           style={{
-            width: "40%",
-            height: "160%",
+            width: wp(80),
+            height: hp(65),
             objectFit: "contain",
           }}
+          key={_currentPage}
+          exiting={FadeOutRight.duration(200).springify()}
+          entering={FadeInLeft.delay(300).duration(200).springify()}
           source={ONBOARDING_DATA[_currentPage].img}
         />
       </View>
       <View
         style={{
-          flex: 0.45,
+          flex: 0.5,
           backgroundColor: COLORS._secondary_color,
           justifyContent: "flex-start",
           alignItems: "center",
-          gap: scale(20),
+          gap: hp(2),
           width: "100%",
         }}
       >
@@ -61,15 +77,16 @@ const OnBoardingScreen = () => {
             width: "100%",
             justifyContent: "flex-start",
             alignItems: "center",
-            padding: scale(10),
-            gap: scale(10),
+            paddingLeft: wp(2),
+            paddingRight: wp(2),
+            gap: hp(2),
           }}
         >
           <Text
             style={{
               color: COLORS._main_text_color,
               fontFamily: "_600",
-              fontSize: responsiveFontSize(4),
+              fontSize: fsp(4),
               textAlign: "center",
             }}
           >
@@ -78,8 +95,8 @@ const OnBoardingScreen = () => {
           <Text
             style={{
               color: COLORS._text_color_1,
-              fontFamily: "_400",
-              fontSize: scale(14),
+              fontFamily: "_300",
+              fontSize: fsp(2),
               textAlign: "center",
             }}
           >
@@ -91,7 +108,7 @@ const OnBoardingScreen = () => {
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "center",
-            gap: scale(10),
+            gap: hp(1),
             width: "100%",
           }}
         >
@@ -99,9 +116,9 @@ const OnBoardingScreen = () => {
             <View
               key={key}
               style={{
-                width: key === _currentPage ? scale(30) : scale(7),
-                height: scale(7),
-                borderRadius: scale(5),
+                width: key === _currentPage ? wp(7) : wp(2),
+                height: wp(2),
+                borderRadius: wp(1),
                 backgroundColor:
                   key === _currentPage
                     ? COLORS._primary_color
@@ -115,15 +132,20 @@ const OnBoardingScreen = () => {
             width: "100%",
             backgroundColor: COLORS._primary_color_1,
             height: 1,
-            marginTop: scale(10),
+            marginTop: hp(1),
           }}
         ></View>
         <View
           style={{
-            paddingLeft: scale(20),
-            paddingRight: scale(20),
+            paddingLeft: wp(5),
+            paddingRight: wp(5),
             flexDirection: "row",
-            gap: scale(10),
+            gap: hp(1),
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            paddingBottom: hp(2),
           }}
         >
           {_currentPage < ONBOARDING_DATA.length - 1 && (
@@ -144,7 +166,7 @@ const OnBoardingScreen = () => {
             color={COLORS._primary_color_1}
             backgroundColor={COLORS._primary_color}
             width={_currentPage < ONBOARDING_DATA.length - 1 ? "50%" : "100%"}
-            onPress={_currentPage<ONBOARDING_DATA.length-1?handleContinue:handleSkip}
+            onPress={handleContinue}
           />
         </View>
       </View>

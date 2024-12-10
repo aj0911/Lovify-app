@@ -1,9 +1,8 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { COLORS } from "../../utils/constants";
-import { scale } from "react-native-size-matters";
 import Loader from "../common/Loader";
-import {} from "react-native-responsive-dimensions"
+import { fsp, hp, wp } from "../../utils/helper";
 
 const Splash = () => {
   return (
@@ -13,33 +12,37 @@ const Splash = () => {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: COLORS._primary_color,
+        width:wp(100)
       }}
     >
       <View
         style={{
           justifyContent: "center",
           alignItems: "center",
-          gap: 20,
-          flex:1
+          gap: hp(2),
+          flex: 1,
+          width:'100%'
         }}
       >
         <Image
-          style={{ width: scale(80), height: scale(80), objectFit: "cover" }}
+          style={{ width: wp(30), height:hp(15),objectFit: "contain" }}
           source={require("../../../assets/logo-white.png")}
         />
         <Text
           style={{
-            fontSize: scale(30),
-            fontFamily: "_700",
+            fontSize: fsp(3.5),
+            fontFamily: "_500",
             color: COLORS._secondary_color,
           }}
         >
           Lovify
         </Text>
       </View>
-      <Loader style={{position:'absolute',
-        bottom:scale(30)
-      }} width={scale(50)} height={scale(50)}/>
+      <Loader
+        style={{ position: "absolute", bottom: hp(5) }}
+        width={hp(7)}
+        height={hp(7)}
+      />
     </View>
   );
 };

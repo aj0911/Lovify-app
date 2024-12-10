@@ -10,9 +10,9 @@ import {
   Lexend_900Black,
 } from "@expo-google-fonts/lexend";
 
-import onboarding_1 from '../../assets/onboarding_1.png'
-import onboarding_2 from '../../assets/onboarding_2.png'
-import onboarding_3 from '../../assets/onboarding_3.png'
+import onboarding_1 from "../../assets/onboarding_1.png";
+import onboarding_2 from "../../assets/onboarding_2.png";
+import onboarding_3 from "../../assets/onboarding_3.png";
 
 export const FONTS = {
   _100: Lexend_100Thin,
@@ -39,16 +39,16 @@ export const ONBOARDING_DATA = [
   {
     title: "Welcome to Lovify - Where Love Meets AI!",
     desc: "Discover a new way to connect with Lovify. The AI Dating App that revolutionizes the way you find love. Get started now!",
-    img:onboarding_1
+    img: onboarding_1,
   },
   {
     title: "Meet Your Match from a World of Possibilities",
     desc: "Dive into a diverse of AI characters waiting to meet you. Swipe through profiles, chat and discover personalities that resonate with you.",
-    img:onboarding_2
+    img: onboarding_2,
   },
   {
     title: "Unlock Premium, Explore More Benifits",
     desc: "Unlock exclusive benifits to supercharge your dating journey. Gain access to unlimited chats, swipes and premium contents.",
-    img:onboarding_3
+    img: onboarding_3,
   },
 ];

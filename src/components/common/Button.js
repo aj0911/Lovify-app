@@ -1,22 +1,29 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { scale } from "react-native-size-matters";
+import { fsp, hp, wp } from "../../utils/helper";
 
-const Button = ({ title,onPress=()=>{}, width, color, backgroundColor, style }) => {
+const Button = ({
+  title,
+  onPress = () => {},
+  width,
+  color,
+  backgroundColor,
+  style,
+}) => {
   return (
     <TouchableOpacity
       style={{
         ...style,
         backgroundColor,
-        padding: scale(15),
+        padding:hp(2),
         width,
-        borderRadius: 30,
+        borderRadius: wp(100),
         justifyContent: "center",
         alignItems: "center",
       }}
       onPress={onPress}
     >
-      <Text style={{ color, fontSize: scale(14), fontFamily: "_600" }}>
+      <Text style={{ color, fontSize: fsp(2), fontFamily: "_500" }}>
         {title}
       </Text>
     </TouchableOpacity>
