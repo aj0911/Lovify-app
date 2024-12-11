@@ -32,7 +32,7 @@ const Splash = () => {
           style={{
             fontSize: fsp(3.5),
             fontFamily: "_500",
-            color: COLORS._secondary_color,
+            color: '#ffffff',
           }}
         >
           Lovify
@@ -40,8 +40,8 @@ const Splash = () => {
       </View>
       <Loader
         style={{ position: "absolute", bottom: hp(5) }}
-        width={hp(7)}
-        height={hp(7)}
+        size={hp(18)}
+        color={'#ffffff'}
       />
     </View>
   );

@@ -21,7 +21,7 @@ const OnBoardingScreen = () => {
       _setCurrentPage((prev) => prev + 1);
     }
     else{
-      router.push('(auth)/login')
+      router.push('(auth)')
     }
   };
 
@@ -33,6 +33,7 @@ const OnBoardingScreen = () => {
         alignItems: "center",
         gap: hp(2),
         width: wp(100),
+        backgroundColor: COLORS._secondary_color,
       }}
     >
       <View
@@ -163,7 +164,7 @@ const OnBoardingScreen = () => {
                 ? "Continue"
                 : "Let's Get Started"
             }
-            color={COLORS._primary_color_1}
+            color={'#ffffff'}
             backgroundColor={COLORS._primary_color}
             width={_currentPage < ONBOARDING_DATA.length - 1 ? "50%" : "100%"}
             onPress={handleContinue}

@@ -4,6 +4,7 @@ import SafeArea from "../components/common/SafeArea";
 import { COLORS } from "../utils/constants";
 import { Stack } from "expo-router";
 
+
 export default function Layout() {
   const appReady = useFonts(); //custom hook takes splash screen
 
@@ -15,8 +16,10 @@ export default function Layout() {
     );
   return (
     <Stack>
-      <Stack.Screen name="index" options={{headerShown:false}}/>
-      <Stack.Screen name="(auth)/login" options={{headerShown:false}}/>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)/index" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)/register" options={{ headerShown: false }} />
     </Stack>
   );
 }

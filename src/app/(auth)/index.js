@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import SafeArea from '../../components/common/SafeArea'
-import SignInScreen from '../../screens/auth/SignInScreen'
+import StartingScreen from '../../screens/auth/StartingScreen'
 
-export default function Login(){
+export default function Index(){
   return (
-    <SafeArea backBtnShown={true}>
-      <SignInScreen/>
+    <SafeArea>
+        <StartingScreen/>
     </SafeArea>
   )
 }

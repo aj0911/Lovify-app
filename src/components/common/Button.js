@@ -9,21 +9,24 @@ const Button = ({
   color,
   backgroundColor,
   style,
+  textStyle,
 }) => {
   return (
     <TouchableOpacity
       style={{
-        ...style,
         backgroundColor,
-        padding:hp(2),
+        padding: hp(2),
         width,
         borderRadius: wp(100),
         justifyContent: "center",
         alignItems: "center",
+        ...style,
       }}
       onPress={onPress}
     >
-      <Text style={{ color, fontSize: fsp(2), fontFamily: "_500" }}>
+      <Text
+        style={{ color, fontSize: fsp(2), fontFamily: "_500", ...textStyle }}
+      >
         {title}
       </Text>
     </TouchableOpacity>
