@@ -41,7 +41,6 @@ const StartingScreen = () => {
             width: wp(20),
             objectFit: "contain",
           }}
-          entering={FadeInUp.delay(300).duration(200).springify()}
           source={require("../../../assets/logo-primary.png")}
         />
         {/* View for title */}
@@ -62,7 +61,6 @@ const StartingScreen = () => {
               color: COLORS._main_text_color,
               textAlign: "center",
             }}
-            entering={FadeInUp.delay(400).duration(200).springify()}
           >
             Let's Get Started!
           </Animated.Text>
@@ -73,7 +71,6 @@ const StartingScreen = () => {
               color: COLORS._text_color_1,
               textAlign: "center",
             }}
-            entering={FadeInUp.delay(500).duration(200).springify()}
           >
             Let's dive in into your account
           </Animated.Text>
@@ -90,7 +87,6 @@ const StartingScreen = () => {
           paddingRight: wp(5),
           flex: 1,
         }}
-        entering={FadeInUp.delay(600).duration(200).springify()}
       >
         <TouchableOpacity style={styles._social_links}>
           <CustomIcon name="google" size={fsp(3.5)} />
@@ -127,7 +123,6 @@ const StartingScreen = () => {
           paddingLeft: wp(5),
           paddingRight: wp(5),
         }}
-        entering={FadeInUp.delay(700).duration(200).springify()}
       >
         <Button
           title={"Sign up"}
@@ -155,7 +150,6 @@ const StartingScreen = () => {
           alignItems: "center",
           gap: wp(4),
         }}
-        entering={FadeInUp.delay(800).duration(200).springify()}
       >
         <TouchableOpacity>
           <Text style={styles._footer_text}>Privacy Policy</Text>

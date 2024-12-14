@@ -27,21 +27,23 @@ export const FONTS = {
 };
 
 export const COLORS = {
+
+  // Common Colors
+  _warn_color:'#E80200',
+  _primary_color: "#FF3EA5",
+  _placeholder_color:'#9A9A9A',
+
   // for light theme
-  _primary_color: "#FE3FA5",
   _secondary_color: "#ffffff",
-  _main_text_color: "#000000",
-  _text_color_1: "#595959",
-  _primary_color_1: "#FFF0F7",
-  _primary_color_2: "#FE85C9",
+  _main_text_color: "#212121",
+  _text_color_1: "#616161",
+  _primary_color_1: "#FAFAFA",
 
   // for dark theme
-  // _primary_color: "#FE3FA5",
-  // _secondary_color: "#191A1F",
+  // _secondary_color: "#181A20",
   // _main_text_color: "#ffffff",
-  // _text_color_1: "#EFF0F6",
-  // _primary_color_1: "#20222B",
-  // _primary_color_2: "#FE85C9",
+  // _text_color_1: "#EEEEEE",
+  // _primary_color_1: "#1F222A",
 };
 
 export const ONBOARDING_DATA = [

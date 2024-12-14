@@ -20,7 +20,7 @@ const SafeArea = ({
   const handleBack = ()=>router.back();
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor,position:'relative' }}>
       {backBtnShown && 
       <View style={styles._backBtnView}>
         <TouchableOpacity onPress={handleBack}>

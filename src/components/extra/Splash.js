@@ -40,7 +40,7 @@ const Splash = () => {
       </View>
       <Loader
         style={{ position: "absolute", bottom: hp(5) }}
-        size={hp(18)}
+        size={hp(12)}
         color={'#ffffff'}
       />
     </View>

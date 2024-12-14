@@ -1,8 +1,9 @@
 import { View, StyleSheet } from "react-native";
 import LottieView from "lottie-react-native";
 import { COLORS } from "../../utils/constants";
+import { hp } from "../../utils/helper";
 
-const Loader = ({ style, size, color }) => {
+const Loader = ({ style, size=hp(20), color=COLORS._primary_color }) => {
 
   return (
     <View style={[styles.container, style, { width:size, height:size }]}>
