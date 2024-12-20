@@ -54,12 +54,12 @@ export default function Layout() {
     ),
   };
 
-  if (!appReady)
-    return (
-      <SafeArea backgroundColor={COLORS._primary_color}>
-        <Splash />
-      </SafeArea>
-    );
+  // if (!appReady)
+  //   return (
+  //     <SafeArea backgroundColor={COLORS._primary_color}>
+  //       <Splash />
+  //     </SafeArea>
+  //   );
   return (
     <>
       {/* Navigation stack */}

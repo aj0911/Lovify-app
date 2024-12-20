@@ -14,6 +14,13 @@ import onboarding_1 from "../../assets/onboarding_1.png";
 import onboarding_2 from "../../assets/onboarding_2.png";
 import onboarding_3 from "../../assets/onboarding_3.png";
 
+import girl_img_1 from "../../assets/girlImg_1.jpg";
+import girl_img_2 from "../../assets/girlImg_2.jpg";
+import girl_img_3 from "../../assets/girlImg_3.jpg";
+import girl_img_4 from "../../assets/girlImg_4.jpg";
+import girl_img_5 from "../../assets/girlImg_5.jpg";
+import girl_img_6 from "../../assets/girlImg_6.jpeg";
+
 export const FONTS = {
   _100: Lexend_100Thin,
   _200: Lexend_200ExtraLight,
@@ -27,11 +34,10 @@ export const FONTS = {
 };
 
 export const COLORS = {
-
   // Common Colors
-  _warn_color:'#E80200',
+  _warn_color: "#E80200",
   _primary_color: "#FF3EA5",
-  _placeholder_color:'#9A9A9A',
+  _placeholder_color: "#9A9A9A",
 
   // for light theme
   _secondary_color: "#ffffff",
@@ -40,10 +46,10 @@ export const COLORS = {
   _primary_color_1: "#FAFAFA",
 
   // for dark theme
-  // _secondary_color: "#181A20",
-  // _main_text_color: "#ffffff",
-  // _text_color_1: "#EEEEEE",
-  // _primary_color_1: "#1F222A",
+  _secondary_color: "#181A20",
+  _main_text_color: "#ffffff",
+  _text_color_1: "#EEEEEE",
+  _primary_color_1: "#1F222A",
 };
 
 export const ONBOARDING_DATA = [
@@ -117,4 +123,58 @@ export const ICON_PATHS = {
       },
     ],
   },
+  filter: {
+    viewBox: "0 0 32 32",
+    paths: [
+      {
+        d: "M2 7h.142a3.981 3.981 0 0 0 7.716 0H30a1 1 0 0 0 0-2H9.858a3.981 3.981 0 0 0-7.716 0H2a1 1 0 0 0 0 2zm4-3a2 2 0 1 1-2 2 2 2 0 0 1 2-2zm24 11h-.142a3.981 3.981 0 0 0-7.716 0H2a1 1 0 0 0 0 2h20.142a3.981 3.981 0 0 0 7.716 0H30a1 1 0 0 0 0-2zm-4 3a2 2 0 1 1 2-2 2 2 0 0 1-2 2zm4 7H19.858a3.981 3.981 0 0 0-7.716 0H2a1 1 0 0 0 0 2h10.142a3.981 3.981 0 0 0 7.716 0H30a1 1 0 0 0 0-2zm-14 3a2 2 0 1 1 2-2 2 2 0 0 1-2 2z",
+        fill: "#000",
+      },
+    ],
+  },
 };
+
+export const CARDS = [
+  {
+    name: 'Isabella',
+    age: 24,
+    gender: 'female',
+    img: girl_img_6,
+    zodiacSign: 'Gemini'
+  },
+  {
+    name: 'Sophia',
+    age: 22,
+    gender: 'female',
+    img: girl_img_1,
+    zodiacSign: 'Leo'
+  },
+  {
+    name: 'Emma',
+    age: 27,
+    gender: 'female',
+    img: girl_img_2,
+    zodiacSign: 'Aries'
+  },
+  {
+    name: 'Olivia',
+    age: 25,
+    gender: 'female',
+    img: girl_img_3,
+    zodiacSign: 'Taurus'
+  },
+  {
+    name: 'Mia',
+    age: 30,
+    gender: 'female',
+    img: girl_img_4,
+    zodiacSign: 'Cancer'
+  },
+  {
+    name: 'Charlotte',
+    age: 28,
+    gender: 'female',
+    img: girl_img_5,
+    zodiacSign: 'Virgo'
+  },
+];

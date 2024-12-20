@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { COLORS } from "../../utils/constants";
-import { fsp } from "../../utils/helper";
+import { fsp, hp } from "../../utils/helper";
 
 export default function TabLayout() {
   // Methods
@@ -25,6 +25,8 @@ export default function TabLayout() {
     },
     tabBarStyle: {
       backgroundColor: COLORS._secondary_color,
+      borderTopWidth:0,
+      height:hp(8)
     },
   });
 
