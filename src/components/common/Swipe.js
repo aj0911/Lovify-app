@@ -24,6 +24,8 @@ const Swipe = ({
         stackSize={stackSize} // Number of cards in the stack
         stackSeparation={0} // No separation between stacked cards
         infinite // Cards will loop after the last one
+        disableTopSwipe
+        disableBottomSwipe
       ></Swiper>
     </View>
   );
@@ -33,7 +35,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    backgroundColor: "transparent",
     justifyContent: "center",
     alignItems: "center",
     flex: 1,

@@ -7,6 +7,7 @@ const Header = ({
   title,
   LeftView = () => <View />,
   RightView = () => <View />,
+  style={}
 }) => {
   return (
     <View style={{
@@ -16,6 +17,7 @@ const Header = ({
         justifyContent:'space-between',
         alignItems:'flex-start',
         gap:wp(2),
+        ...style
     }}>
       <LeftView />
       <Text style={{

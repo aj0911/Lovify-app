@@ -76,6 +76,11 @@ export default function Layout() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+
+        <Stack.Screen
+          name="(extra)/filter"
+          options={{ headerShown: false, animation: "slide_from_bottom" }}
+        />
       </Stack>
       {/* Toast component outside of the Stack */}
       <Toast config={toastConfig} />

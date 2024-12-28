@@ -26,22 +26,22 @@ export default function TabLayout() {
     tabBarStyle: {
       backgroundColor: COLORS._secondary_color,
       borderTopWidth:0,
-      height:hp(8)
+      height:hp(8),
     },
   });
 
   return (
     <Tabs>
       <Tabs.Screen
-        name="for-you"
+        name="for-you/index"
         options={getOptions("For You", "heart-circle", "heart-circle-outline")}
       />
       <Tabs.Screen
-        name="explore"
+        name="explore/index"
         options={getOptions("Explore", "compass", "compass-outline")}
       />
       <Tabs.Screen
-        name="chats"
+        name="chats/index"
         options={getOptions(
           "Chats",
           "chatbubble-ellipses",
@@ -49,11 +49,11 @@ export default function TabLayout() {
         )}
       />
       <Tabs.Screen
-        name="my-creation"
+        name="my-creation/index"
         options={getOptions('My Creation','star','star-outline')}
       />
       <Tabs.Screen
-        name="account"
+        name="account/index"
         options={getOptions('Account','accessibility','accessibility-outline')}
       />
     </Tabs>

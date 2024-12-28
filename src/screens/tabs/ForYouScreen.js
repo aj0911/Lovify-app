@@ -15,8 +15,17 @@ import { CARDS, COLORS } from "../../utils/constants";
 import Swipe from "../../components/common/Swipe";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 const ForYouScreen = () => {
+  //States
+  const router = useRouter();
+
+  //Methods
+  const handleFilterPress = () => {
+    router.push("(extra)/filter");
+  };
+
   return (
     <View
       style={{
@@ -25,8 +34,8 @@ const ForYouScreen = () => {
         justifyContent: "flex-start",
         alignItems: "center",
         paddingHorizontal: wp(5),
-        gap:hp(1),
-        paddingBottom:hp(1)
+        gap: hp(1),
+        paddingBottom: hp(1),
       }}
     >
       <Header
@@ -43,7 +52,7 @@ const ForYouScreen = () => {
         )}
         title={"For You"}
         RightView={() => (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleFilterPress}>
             <CustomIcon
               name={"filter"}
               size={fsp(3)}
@@ -57,7 +66,8 @@ const ForYouScreen = () => {
         stackSize={CARDS.length}
         renderCard={(item, index) => {
           return (
-            <View
+            <TouchableOpacity
+            onPress={()=>console.log('pressed')}
               style={{
                 flex: 1,
                 borderRadius: fsp(2),
@@ -73,12 +83,17 @@ const ForYouScreen = () => {
             >
               <ImageBackground
                 style={{
-                  width: "100%",
-                  height: "100%",
+                  flex:1,
+                  width:'100%',
                   borderRadius: fsp(2),
                   position: "relative",
                 }}
-                imageStyle={{ borderRadius: fsp(2), position: "relative" }}
+                imageStyle={{
+                  borderRadius: fsp(2),
+                  position: "relative",
+                  flex:1,
+                  width:'100%'
+                }}
                 source={item.img}
               >
                 <LinearGradient
@@ -209,7 +224,7 @@ const ForYouScreen = () => {
                   </View>
                 </LinearGradient>
               </ImageBackground>
-            </View>
+            </TouchableOpacity>
           );
         }}
       />

@@ -44,12 +44,14 @@ export const COLORS = {
   _main_text_color: "#212121",
   _text_color_1: "#616161",
   _primary_color_1: "#FAFAFA",
+  _borderColor:'#E1E1E1',
 
   // for dark theme
-  _secondary_color: "#181A20",
-  _main_text_color: "#ffffff",
-  _text_color_1: "#EEEEEE",
-  _primary_color_1: "#1F222A",
+  // _secondary_color: "#181A20",
+  // _main_text_color: "#ffffff",
+  // _text_color_1: "#EEEEEE",
+  // _primary_color_1: "#1F222A",
+  // _borderColor:'#373740'
 };
 
 export const ONBOARDING_DATA = [
