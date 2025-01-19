@@ -47,11 +47,11 @@ export const COLORS = {
   _borderColor:'#E1E1E1',
 
   // for dark theme
-  // _secondary_color: "#181A20",
-  // _main_text_color: "#ffffff",
-  // _text_color_1: "#EEEEEE",
-  // _primary_color_1: "#1F222A",
-  // _borderColor:'#373740'
+  _secondary_color: "#181A20",
+  _main_text_color: "#ffffff",
+  _text_color_1: "#EEEEEE",
+  _primary_color_1: "#1F222A",
+  _borderColor:'#373740'
 };
 
 export const ONBOARDING_DATA = [
@@ -179,4 +179,138 @@ export const CARDS = [
     img: girl_img_5,
     zodiacSign: 'Virgo'
   },
+];
+
+export const EXPLORE = {
+  FEMALE:0,
+  MALE:1,
+}
+
+export const EXPLORE_DATA = [
+  // Female data
+  [
+    {
+      name: "Sophia Johnson",
+      age: 25,
+      zodiacSign: "Libra",
+      profileImg: "https://images.unsplash.com/photo-1440589473619-3cde28941638?w=720"
+    },
+    {
+      name: "Emma Williams",
+      age: 28,
+      zodiacSign: "Gemini",
+      profileImg: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=720"
+    },
+    {
+      name: "Olivia Brown",
+      age: 30,
+      zodiacSign: "Taurus",
+      profileImg: "https://images.unsplash.com/photo-1512375890245-7862e320210a?w=720"
+    },
+    {
+      name: "Isabella Davis",
+      age: 22,
+      zodiacSign: "Leo",
+      profileImg: "https://images.unsplash.com/photo-1534008757030-27299c4371b6?w=720"
+    },
+    {
+      name: "Ava Wilson",
+      age: 26,
+      zodiacSign: "Cancer",
+      profileImg: "https://images.unsplash.com/photo-1517212160285-e9fbf358c905?w=720"
+    },
+    {
+      name: "Mia Anderson",
+      age: 24,
+      zodiacSign: "Aquarius",
+      profileImg: "https://images.unsplash.com/photo-1517014041262-d928d6fa9c30?w=720"
+    },
+    {
+      name: "Charlotte Martinez",
+      age: 29,
+      zodiacSign: "Capricorn",
+      profileImg: "https://images.unsplash.com/photo-1536811145290-bc394643e51e?w=720"
+    },
+    {
+      name: "Amelia Hernandez",
+      age: 27,
+      zodiacSign: "Pisces",
+      profileImg: "https://images.unsplash.com/photo-1528046530702-338a48cb3e82?w=720"
+    },
+    {
+      name: "Harper Moore",
+      age: 23,
+      zodiacSign: "Sagittarius",
+      profileImg: "https://images.unsplash.com/photo-1528046929921-e2ef46232d30?w=720"
+    },
+    {
+      name: "Evelyn White",
+      age: 28,
+      zodiacSign: "Virgo",
+      profileImg: "https://images.unsplash.com/photo-1519385341168-7ef8db859ef6?w=720"
+    }
+  ],
+  // Male data
+  [
+    {
+      name: "Liam Smith",
+      age: 27,
+      zodiacSign: "Aries",
+      profileImg: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=720"
+    },
+    {
+      name: "Noah Johnson",
+      age: 29,
+      zodiacSign: "Scorpio",
+      profileImg: "https://plus.unsplash.com/premium_photo-1669688174637-92ff26cc0a9b?w=720"
+    },
+    {
+      name: "William Brown",
+      age: 31,
+      zodiacSign: "Sagittarius",
+      profileImg: "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=720"
+    },
+    {
+      name: "James Davis",
+      age: 24,
+      zodiacSign: "Virgo",
+      profileImg: "https://plus.unsplash.com/premium_photo-1687989650789-eb49612f2523?w=720"
+    },
+    {
+      name: "Benjamin Wilson",
+      age: 26,
+      zodiacSign: "Libra",
+      profileImg: "https://plus.unsplash.com/premium_photo-1663089969448-36b88885cc59?w=720"
+    },
+    {
+      name: "Lucas Martinez",
+      age: 30,
+      zodiacSign: "Gemini",
+      profileImg: "https://plus.unsplash.com/premium_photo-1667520151564-6b9e833b8972?w=720"
+    },
+    {
+      name: "Henry Garcia",
+      age: 28,
+      zodiacSign: "Cancer",
+      profileImg: "https://plus.unsplash.com/premium_photo-1664910875345-4b33230e1774?w=720"
+    },
+    {
+      name: "Alexander Hernandez",
+      age: 23,
+      zodiacSign: "Aquarius",
+      profileImg: "https://plus.unsplash.com/premium_photo-1664475864724-573d4247ec5a?w=720"
+    },
+    {
+      name: "Michael Moore",
+      age: 25,
+      zodiacSign: "Taurus",
+      profileImg: "https://images.unsplash.com/photo-1610394068204-33349fe939e1?w=720"
+    },
+    {
+      name: "Daniel White",
+      age: 27,
+      zodiacSign: "Leo",
+      profileImg: "https://images.unsplash.com/photo-1610394068183-ee38bfc0b8f5?w=720"
+    }
+  ]
 ];

@@ -5,6 +5,7 @@ import { COLORS } from "../utils/constants";
 import { Stack } from "expo-router";
 import Toast, { BaseToast } from "react-native-toast-message";
 import { fsp, hp, wp } from "../utils/helper";
+import { StatusBar } from "expo-status-bar";
 
 export default function Layout() {
   const appReady = useFonts(); //custom hook takes splash screen
@@ -54,14 +55,15 @@ export default function Layout() {
     ),
   };
 
-  // if (!appReady)
-  //   return (
-  //     <SafeArea backgroundColor={COLORS._primary_color}>
-  //       <Splash />
-  //     </SafeArea>
-  //   );
+  if (!appReady)
+    return (
+      <SafeArea backgroundColor={COLORS._primary_color}>
+        <Splash />
+      </SafeArea>
+    );
   return (
     <>
+    <StatusBar/>
       {/* Navigation stack */}
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
@@ -79,7 +81,11 @@ export default function Layout() {
 
         <Stack.Screen
           name="(extra)/filter"
-          options={{ headerShown: false, animation: "slide_from_bottom" }}
+          options={{ headerShown: false, animation: "slide_from_bottom", presentation:'modal' }}
+        />
+        <Stack.Screen
+          name="(extra)/profile"
+          options={{ headerShown: false, animation: "slide_from_right" }}
         />
       </Stack>
       {/* Toast component outside of the Stack */}

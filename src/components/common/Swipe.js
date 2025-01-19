@@ -9,6 +9,11 @@ const Swipe = ({
   renderCard = () => {},
   onSwiped = () => {},
   onSwipedAll = () => {},
+  onSwiping = ()=>{},
+  onSwipedAborted = ()=>{},
+  onSwipedRight = ()=>{},
+  onSwipedLeft = ()=>{},
+  onSwipedTop = ()=>{},
   stackSize
 }) => {
   return (
@@ -24,8 +29,12 @@ const Swipe = ({
         stackSize={stackSize} // Number of cards in the stack
         stackSeparation={0} // No separation between stacked cards
         infinite // Cards will loop after the last one
-        disableTopSwipe
         disableBottomSwipe
+        onSwiping={onSwiping}
+        onSwipedAborted={onSwipedAborted}
+        onSwipedRight={onSwipedRight}
+        onSwipedLeft={onSwipedLeft}
+        onSwipedTop={onSwipedTop}
       ></Swiper>
     </View>
   );

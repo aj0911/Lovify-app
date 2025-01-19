@@ -1,5 +1,4 @@
 import {
-  Button,
   Image,
   ImageBackground,
   StyleSheet,
@@ -7,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/common/Header";
 import CustomIcon from "../../components/common/CustomIcon";
 import { fsp, hp, wp } from "../../utils/helper";
@@ -20,10 +19,27 @@ import { useRouter } from "expo-router";
 const ForYouScreen = () => {
   //States
   const router = useRouter();
+  const [_state, _setState] = useState({
+    isLikeImgVisible: false,
+    isRejectImgVisible: false,
+    isSaveImgVisible:false
+  });
 
   //Methods
   const handleFilterPress = () => {
     router.push("(extra)/filter");
+  };
+  const makeImgInvisible = (key) => {
+    _setState((prev) => ({ ...prev, [key]: false }));
+  };
+
+  const makeAllImgInvisible = () => {
+    makeImgInvisible("isLikeImgVisible");
+    makeImgInvisible("isRejectImgVisible");
+    makeImgInvisible("isSaveImgVisible");
+  };
+  const handleCardClick = () => {
+    router.push("(extra)/profile");
   };
 
   return (
@@ -36,6 +52,7 @@ const ForYouScreen = () => {
         paddingHorizontal: wp(5),
         gap: hp(1),
         paddingBottom: hp(1),
+        position: "relative",
       }}
     >
       <Header
@@ -64,10 +81,26 @@ const ForYouScreen = () => {
       <Swipe
         cards={CARDS}
         stackSize={CARDS.length}
+        onSwiping={(x, y) => {
+          if (x > 0 && Math.abs(y) <= 50) {
+            makeAllImgInvisible()
+            _setState((prev) => ({ ...prev, isLikeImgVisible: true }));
+          } else if (x < 0 && Math.abs(y) <= 50) {
+            makeAllImgInvisible()
+            _setState((prev) => ({ ...prev, isRejectImgVisible: true }));
+          } else if (y < -50) {
+            makeAllImgInvisible()
+            _setState((prev)=>({...prev, isSaveImgVisible:true}))
+          }
+        }}
+        onSwipedAborted={makeAllImgInvisible}
+        onSwipedRight={makeAllImgInvisible}
+        onSwipedLeft={makeAllImgInvisible}
+        onSwipedTop={makeAllImgInvisible}
         renderCard={(item, index) => {
           return (
-            <TouchableOpacity
-            onPress={()=>console.log('pressed')}
+            <View
+              onPress={handleCardClick}
               style={{
                 flex: 1,
                 borderRadius: fsp(2),
@@ -83,16 +116,16 @@ const ForYouScreen = () => {
             >
               <ImageBackground
                 style={{
-                  flex:1,
-                  width:'100%',
+                  flex: 1,
+                  width: "100%",
                   borderRadius: fsp(2),
                   position: "relative",
                 }}
                 imageStyle={{
                   borderRadius: fsp(2),
                   position: "relative",
-                  flex:1,
-                  width:'100%'
+                  flex: 1,
+                  width: "100%",
                 }}
                 source={item.img}
               >
@@ -210,6 +243,7 @@ const ForYouScreen = () => {
                         backgroundColor: COLORS._primary_color,
                         borderRadius: fsp(5),
                       }}
+                      onPress={handleCardClick}
                     >
                       <Text
                         style={{
@@ -224,10 +258,52 @@ const ForYouScreen = () => {
                   </View>
                 </LinearGradient>
               </ImageBackground>
-            </TouchableOpacity>
+            </View>
           );
         }}
       />
+      {_state.isLikeImgVisible && (
+        <Image
+          source={require("../../../assets/like.png")}
+          style={{
+            width: wp(100),
+            height: hp(25),
+            objectFit: "contain",
+            position: "absolute",
+            top: 0,
+            left: wp(25),
+            zIndex: 55,
+          }}
+        />
+      )}
+      {_state.isRejectImgVisible && (
+        <Image
+          source={require("../../../assets/reject.png")}
+          style={{
+            width: wp(50),
+            height: hp(25),
+            objectFit: "contain",
+            position: "absolute",
+            top: 0,
+            left:0,
+            zIndex: 55,
+          }}
+        />
+      )}
+      {_state.isSaveImgVisible && (
+        <Image
+          source={require("../../../assets/save.png")}
+          style={{
+            width: wp(100),
+            height: hp(25),
+            objectFit: "contain",
+            position: "absolute",
+            bottom: 0,
+            left:0,
+            zIndex: 55,
+          }}
+        />
+      )}
     </View>
   );
 };
